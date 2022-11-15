@@ -23,7 +23,7 @@ const todoList = () => {
     }
   
     const dueToday = () => {
-        // Write the date check condition here and return the array of todo items that are due today accordingly.
+      // Write the date check condition here and return the array of todo items that are due today accordingly.
       // FILL YOUR CODE HERE
       // ..
       // ..
@@ -48,7 +48,7 @@ const todoList = () => {
       for(var i=0;i<all.length;i++){
         if(all[i].dueDate=='2022-09-20'){
             dl.push(all[i]);
-            }
+        }
       }
       return dl;
     }
@@ -98,7 +98,8 @@ const todoList = () => {
   // ####################################### #
   // DO NOT CHANGE ANYTHING BELOW THIS LINE. #
   // ####################################### #
-const todos = todoList();
+  
+  const todos = todoList();
   
   const formattedDate = d => {
     return d.toISOString().split("T")[0]
@@ -106,8 +107,12 @@ const todos = todoList();
   
   var dateToday = new Date()
   const today = formattedDate(dateToday)
-  const yesterday = formattedDate(new Date(new Date().setDate(dateToday.getDate() - 1)))
-  const tomorrow = formattedDate(new Date(new Date().setDate(dateToday.getDate() + 1)))
+  const yesterday = formattedDate(
+    new Date(new Date().setDate(dateToday.getDate() - 1))
+  )
+  const tomorrow = formattedDate(
+    new Date(new Date().setDate(dateToday.getDate() + 1))
+  )
   
   todos.add({ title: 'Submit assignment', dueDate: yesterday, completed: false })
   todos.add({ title: 'Pay rent', dueDate: today, completed: true })
